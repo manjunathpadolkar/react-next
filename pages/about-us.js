@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Layout from '../components/layouts/app.js'
+import Layout from '../components/layouts/default.js'
 import styles from '../styles/Home.module.css'
 import Typography from '@material-ui/core/Typography'
 

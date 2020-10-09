@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
@@ -48,6 +49,12 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignUp() {
   const classes = useStyles();
+  const router = useRouter();
+
+  function doLogin(e){
+    e.preventDefault();
+    router.push('/app/dashboard')
+  }
 
   return (
     <Container component="main" maxWidth="xs">
@@ -120,6 +127,7 @@ export default function SignUp() {
             variant="contained"
             color="primary"
             className={classes.submit}
+            onClick={doLogin}
           >
             Sign Up
           </Button>

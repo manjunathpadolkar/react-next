@@ -14,7 +14,7 @@ function Dashboard() {
           <div className={styles.main}>
             <Typography variant="h1" gutterBottom>Dashboard</Typography>
             <div>
-              <p>Welcome to your dashboard. Cheer !</p>
+              <p>Welcome to your dashboard. Have Fun !</p>
             </div>
           </div>
         </div>

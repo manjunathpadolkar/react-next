@@ -1,22 +1,36 @@
 import Link from 'next/link'
+import Button from '@material-ui/core/Button';
 import styles from '../../styles/Home.module.css'
 
-export default function () {
+export default class TheHeaderLinks extends React.Component {
 
-    return (<div>
-        <Link href="/"><a className={styles.headerlink}>Home</a></Link>
-        
-        <Link href="/about-us"><a className={styles.headerlink}>About Us</a></Link>
+    constructor(props){
+        super(props)
+        this.state = {
+            links: [
+                {name: 'Home', link: '/'},
+                {name: 'About Us', link: '/about-us'},
+                {name: 'Blog', link: '/blogs'},
+                {name: 'FAQ', link: '/faq'},
+                {name: 'Contact', link: '/contact-us'},
+                {name: 'Sign In', link: '/signin'},
+                {name: 'Sign Up', link: '/signup'}
+            ]
+        }
+    }
 
-        <Link href="/blogs"><a className={styles.headerlink}>Blog</a></Link>
-
-        <Link href="/faq"><a className={styles.headerlink}>FAQ</a></Link>
-
-        <Link href="/contact-us"><a className={styles.headerlink}>Contact</a></Link>
-
-        <Link href="/signin"><a className={styles.headerlink}>Sign In</a></Link>
-
-        <Link href="/signup"><a className={styles.headerlink}>Sign Up</a></Link>
-    </div>)
+    render() {
+        const listItems = this.state.links.map(function(item){
+            return <Link href={item.link}>
+                <Button color="inherit">
+                    {item.name}
+                </Button>
+            </Link>
+        })
+        return (<div className={styles.headerlink}>
+            {listItems}
+            <Button color="inherit">Login</Button>
+        </div>)
+    }
 
 }

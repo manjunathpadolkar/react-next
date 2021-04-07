@@ -131,15 +131,10 @@
   }
 }
 
-.headerlink{
-  color: #FFF;
-  text-decoration: none;
-  margin-left: 20px;
-  text-decoration: none;
-  color: #FFF;
+.appBar{
+  background-color: #5C6D7F !important;
 }
-
-.headerlinksep{
-  color: #FFF;
-  text-decoration: none; 
+.headerlink{
+  border: 1px solid red;
+  text-align: right;
 }
